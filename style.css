@@ -1,0 +1,121 @@
+body{
+  position: relative;
+  margin: 0;
+  background-color: lightgrey;
+  font-family: 'Righteous', cursive;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 1em;
+  padding: 1.5em;
+  justify-items: center;
+}
+
+.wrapper .modaalContent{
+  display: none;
+}
+
+h1{
+  grid-column: 1/-3;
+}
+
+img.modaalKnop{
+  max-width: 150px;
+  transition: transform .3s ease-out, box-shadow .4s ease-out;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.7);
+}
+
+
+.modaalKnop:hover{
+  color: red;
+  cursor: pointer;
+}
+img.modaalKnop:hover{
+  transform: scale(1.12);
+  box-shadow: .5em .5em 2em rgba(0, 0, 0, 0.9);
+}
+
+.image{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 80vw;
+  grid-gap: 2.5em;
+}
+
+.grid img{
+  max-width: 100vw;
+}
+
+.modaal-achtergrond {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.modaal {
+  max-width: 80%;
+  padding: 1em;
+  border-radius: 1.2em;
+  background-color: #fff;
+  max-height: 75vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-row-gap: 1em;
+  animation: verschijn 0.8s ease-in-out forwards;
+}
+
+@keyframes verschijn {
+  0% {transform: scale(0);}
+  20% {transform: scale(1.3);}
+  30% {transform: scale(0.8);}
+  40% {transform: scale(1.2);}
+  50% {transform: scale(0.9);}
+  60% {transform: scale(1.1);}
+  70% {transform: scale(0.95);}
+  80% {transform: scale(1.05);}
+  90% {transform: scale(0.95);}
+  100% {transform: scale(1);}
+}
+
+.modaalContent{
+  width: 100%;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
+  background: transparent;
+}
+
+.modaal img{
+  width: 350px;
+  height: 350px;
+  margin: auto;
+}
+
+.sluit-knop{
+  width: 2em;
+  font-size: 2em;
+  font-weight: 900;
+  border: 0;
+  background-color: white;
+  justify-self: end;
+  transform: translateX(.4em);
+}
+
+.sluit-knop:hover{
+  color: red;
+  cursor: pointer;
+}
+
+#validatie{
+  margin: 1.5em;
+}
